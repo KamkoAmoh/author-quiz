@@ -1,0 +1,118 @@
+.container {
+  padding-top: 10px;
+  display: flex;
+  flex-flow: column;
+  justify-items: auto;
+  border-width: 2px;
+  border-style: groove;
+  border-color: azure;
+  padding-bottom: 10px;
+}
+
+.hero {
+  background-color: beige;
+  width: auto;
+  height: 100px;
+  border-radius: 8px;
+  border-width: 1px 1px 1px 1px;
+  border-color: tomato;
+  border-style: solid;
+}
+
+.hero__content {
+  padding-left: 30px;
+}
+
+.turn > div {
+  padding-top: 10px;
+  height: 400px;
+}
+
+.turn {
+  resize: both;
+  padding-top: auto;
+  padding-bottom: auto;
+}
+
+.turn__content {
+  display: flex;
+  margin-top: 10px;
+  background-color: lightgray;
+  padding-bottom: 10px;
+  border-radius: 15px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: burlywood;
+  justify-content: space-evenly;
+}
+
+.turn__answer__row {
+  width: auto;
+  margin: 20px 10px 10px 10px;
+}
+
+.authorimage {
+  border-radius: 25px;
+  margin-top: 3px;
+  margin-left: 5px;
+  padding-top: 5px;
+  padding-right: 10px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.answer {
+  background-color: #f0f7fd;
+  border-color: #d0e3d0;
+  margin-bottom: 20px;
+  padding: 22px 32px 22px 22px;
+  border-left: 6px solid #d0e3f0;
+  cursor: pointer;
+  border-radius: 10px;
+  border-top: 1px solid burlywood;
+  border-bottom: 1px solid burlywood;
+  border-right: 1px solid burlywood;
+}
+
+.answer:hover {
+  background-color: #d0e3f0;
+}
+
+.continue {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.add__author {
+  padding-top: auto;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: wheat;
+  border-radius: 5px;
+  border-style: groove;
+  text-align: center;
+}
+
+.footer {
+  border-radius: 5px;
+  border-style: outset;
+  padding-top: auto;
+  background-color: antiquewhite;
+  width: auto;
+}
+
+.footer__frame {
+  background-color: lightcyan;
+  border: gray;
+  border-width: 10px;
+}
+
+.footer__content {
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  text-align: center;
+}
+
+@media screen and (max-width: 762px) {
+  .turn__content {
+    flex-direction: column;
+  }
+}

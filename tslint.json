@@ -1,0 +1,21 @@
+{
+    "extends": [
+      "tslint:latest",
+      "tslint-react",
+      "tslint-react-hooks"
+    ],
+    "rules": {
+      "interface-name": false,
+      "interface-over-type-literal": false,
+      "jsx-no-lambda": false,
+      "jsx-wrap-multiline": false,
+      "member-access": false,
+      "no-implicit-dependencies": [true, "dev"],
+      "no-submodule-imports": false,
+      "object-literal-sort-keys": false,
+      "quotemark": [true, "single", "jsx-double", "avoid-escape"],
+      "arrow-parens": [true, "ban-single-arg-parens"],
+      "react-hooks-nesting": "error",
+      "no-consecutive-blank-lines": [true, 2]
+    }
+  }

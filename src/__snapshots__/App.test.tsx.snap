@@ -1,0 +1,156 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Expect Turn to have attributes and render 1`] = `
+<div
+  className="turn__content"
+  style={
+    Object {
+      "backgroundColor": "lightGreen",
+    }
+  }
+>
+  <div
+    className="turn_image"
+  >
+    <img
+      alt="Author"
+      className="authorimage"
+    />
+  </div>
+  <div
+    className="turn__answer__row"
+  >
+    <div
+      className="answer"
+      onClick={[Function]}
+    >
+      <h4>
+        book
+      </h4>
+    </div>
+    <div
+      className="answer"
+      onClick={[Function]}
+    >
+      <h4>
+        book2
+      </h4>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Expect to reder: 1`] = `
+<div
+  className="hero"
+>
+  <div
+    className="hero__content"
+  >
+    <h1>
+      Auhtor Quiz
+    </h1>
+    <p>
+      Select the book written by:
+    </p>
+  </div>
+</div>
+`;
+
+exports[`Should have access to all Display Components 1`] = `
+<div>
+  <div
+    className="answer"
+    onClick={[Function]}
+  >
+    <h4>
+      Book Title
+    </h4>
+  </div>
+  <div
+    className="continue"
+  >
+    <div
+      className="col-11"
+    >
+      <button
+        className="btn btn-primary btn-lg float-right"
+        onClick={[Function]}
+      >
+        Continue
+      </button>
+    </div>
+  </div>
+  <div
+    className="turn__content"
+    style={
+      Object {
+        "backgroundColor": "lightGreen",
+      }
+    }
+  >
+    <div
+      className="turn_image"
+    >
+      <img
+        alt="Author"
+        className="authorimage"
+      />
+    </div>
+    <div
+      className="turn__answer__row"
+    >
+      <div
+        className="answer"
+        onClick={[Function]}
+      >
+        <h4>
+          book
+        </h4>
+      </div>
+      <div
+        className="answer"
+        onClick={[Function]}
+      >
+        <h4>
+          book1
+        </h4>
+      </div>
+    </div>
+  </div>
+  <div
+    className="footer"
+    id="footer"
+  >
+    <div
+      className="footer__frame"
+    >
+      <p
+        className="footer__content"
+      >
+        All images are from 
+        <a
+          href="https://commons.wikimedia.org/wiki/Main_Page"
+        >
+          Wikimedia Commons
+        </a>
+         and are in public domain.
+      </p>
+    </div>
+  </div>
+  <div
+    className="hero"
+  >
+    <div
+      className="hero__content"
+    >
+      <h1>
+        Auhtor Quiz
+      </h1>
+      <p>
+        Select the book written by:
+      </p>
+    </div>
+  </div>
+</div>
+`;
