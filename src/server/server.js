@@ -8,7 +8,9 @@ server.use(cors());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost/authors', {useNewUrlParser: true, useUnifiedTopology: true});
+// mongoose.connect('mongodb://localhost/authors', {useNewUrlParser: true, useUnifiedTopology: true});
+
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://127.0.0.1:27017/author-quiz');
 
 const authorSchema = new mongoose.Schema({
   name: String,
