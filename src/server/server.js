@@ -8,9 +8,9 @@ server.use(cors());
 server.use(bodyParser.urlencoded({ extended: true }));
 server.use(bodyParser.json());
 
-// mongoose.connect('mongodb://localhost/authors', {useNewUrlParser: true, useUnifiedTopology: true});
+mongoose.connect('mongodb://localhost/authors', {useNewUrlParser: true, useUnifiedTopology: true});
 
-mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://127.0.0.1:27017/author-quiz');
+// mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://127.0.0.1:27017/author-quiz');
 
 const authorSchema = new mongoose.Schema({
   name: String,
@@ -47,6 +47,17 @@ server.delete('/:id', async (req, res) => {
   res.send(data.toJSON());
 })
 
+server.delete('/', async (_req, res) => {
+  const data = await AuthorData.find({});
+  if (!data) return res.sendStatus(404);
+  for (let i = 0; i < data.length; i++) {
+    await AuthorData.findByIdAndDelete(data[i]._id);
+  }
+  res.sendStatus(200);
+
+})
+
 server.listen('3001', async () => {
   console.log('Server starts at port 3001');
 });
+

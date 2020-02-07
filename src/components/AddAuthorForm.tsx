@@ -6,10 +6,16 @@ const AuthorForm = (props) => {
   const [state, setState] = useState({
     name: "" as string,
     imageUrl: "" as string,
-    books: [] as string[],
+    books: [] as any,
     bookTemp: "" as string
   });
 
+  const removeBook = (removeIndex: any) => {
+    return setState({
+      ...state,
+      books: state.books.filter((_book, index)=> index !== removeIndex)
+    })
+  };
 
   const handleAddBook = (_event: any) => {
     return setState({
@@ -43,22 +49,31 @@ const AuthorForm = (props) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="AddAuthorForm">
         <div className="AddAuthorForm__input">
-            <label htmlFor="name">Name</label>
-            <input type="text" name="name" value={state.name} onChange={onFieldChange} />
+            <label htmlFor="name" className="labelText">Name</label>
+            <input type="text" name="name" className="inputLabel" value={state.name} onChange={onFieldChange} />
         </div>
         <div className="AddAuthorForm__input">
-            <label htmlFor="imageUrl">Image URL</label>
-            <input type="text" name="imageUrl" value={state.imageUrl} onChange={onFieldChange} />
+            <label htmlFor="imageUrl" className="labelText">Image URL</label>
+            <input type="text" name="imageUrl" className="inputLabel" value={state.imageUrl} onChange={onFieldChange} />
         </div>
         <div className="AddAuthorForm__input">
-            <label htmlFor="bookTemp">Books:</label>
-            {state.books.map((book) => <p key={book}>{book}</p>)}
-            <input type="text" name="bookTemp" value={state.bookTemp} onChange={onFieldChange} />
-            <input type="button" value="+" onClick={handleAddBook} />
+            <label htmlFor="bookTemp" className="labelText">Books:</label>
+            <ul className="bookAndButton">
+              {state.books.map((book, index) => (
+                <li key={index} className="bookStyle">{book}
+                <button className="removeBook" onClick={(event) => {
+                    event.preventDefault();
+                    return removeBook(index);
+                  }}>x</button>
+                </li>
+              ))}
+            </ul>
+            <input type="text" name="bookTemp" className="inputLabel" value={state.bookTemp} onChange={onFieldChange}></input>
+            <input type="button" className="bookAddButton" value="add book" onClick={handleAddBook} />
         </div>
-        <input type="submit" value="Add" />
+        <input type="submit" className="addAuthorButton" value="Add" />
     </form>
   );
 };
